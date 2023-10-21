@@ -2,13 +2,14 @@ services:
 
   app-container:
     build:
-      dockerfile: /home/kingman/Docker/dockerCompose/Dockerfile
+      dockerfile: /home/ubuntu/dockerComposeURL/Dockerfile
     ports:
       - "8000:80"
 
   nginx-container:
     build:
-      dockerfile: /home/kingman/Docker/dockerCompose/Dockerfile.nginx
+      context: .
+      dockerfile: /home/ubuntu/dockerComposeURL/Dockerfile.nginx
     ports:
       - "80:80"
     depends_on:
