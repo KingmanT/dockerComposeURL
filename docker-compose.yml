@@ -1,0 +1,15 @@
+services:
+
+  app-container:
+    build:
+      dockerfile: /home/kingman/Docker/dockerCompose/Dockerfile
+    ports:
+      - "8000:80"
+
+  nginx-container:
+    build:
+      dockerfile: /home/kingman/Docker/dockerCompose/Dockerfile.nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app-container
